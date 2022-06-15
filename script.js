@@ -64,4 +64,26 @@ function displayStudents(){
     })
 }
 
+function setCardsWhite(){
+    // had to put it in separate function in order to work with forEach
+    let cards = document.querySelectorAll('.card');
+    cards.forEach( (card) => {card.style.background = 'white'})
+}
+
+function addEventListeners(){
+    let cards = document.querySelectorAll('.card');
+    cards.forEach((card) => {
+        card.addEventListener('click', () => {
+            if(card.style.background === 'gray'){
+                card.style.background = 'white';
+            }
+            else{
+                setCardsWhite();
+                card.style.background = 'gray';
+            }
+        })
+    })
+}
+
 displayStudents();
+addEventListeners();
