@@ -27,7 +27,7 @@ function displayStudents(){
 
     students.forEach( (item) => {
         let card = document.createElement('div');
-        card.setAttribute('class','card')
+        card.setAttribute('class','card');
         let name = document.createElement('p');
         name.innerText = item.name;
         let lastName = document.createElement('p');
@@ -38,20 +38,28 @@ function displayStudents(){
         });
 
         let attendance = document.createElement('p');
-        attendance.innerText = attendanceFilter.length;
+        attendance.innerText = 'Attendance: '+ attendanceFilter.length;
 
         let averageFromMarks = item.marks.reduce((a, b) => a + b, 0) / item.marks.length;
 
+        if(averageFromMarks < 5){
+            card.style.border = '2px solid red';
+        }
+        else if(averageFromMarks > 5){
+            card.style.border = '2px solid green';
+        }
+
         let average = document.createElement('p');
-        average.innerText = averageFromMarks;
+        average.innerText = 'Average: '+ averageFromMarks;
 
         card.append(name);
         card.append(lastName);
         card.append(attendance);
+        card.append(average);
         console.log(attendanceFilter);
         console.log(averageFromMarks);
 
-        document.querySelector('#container').append(card);
+        container.append(card);
 
     })
 }
