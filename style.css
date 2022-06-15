@@ -1,0 +1,22 @@
+.task{
+    border: 2px solid black;
+    border-radius: 20px;
+    text-align: center;
+    height: 350px;
+    margin-bottom: 30px;
+    padding: 20px;
+}
+
+.subDiv{
+    display: grid;
+    border: 2px solid red;
+    float: left;
+}
+p {
+    float: left;
+}
+
+#taskOne{
+    overflow: auto;
+    display: flex;
+}
